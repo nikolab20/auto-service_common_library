@@ -64,23 +64,13 @@ public class Deo implements Serializable, DomainObject {
     private String opis;
 
     /**
-     * The price of a car part.
-     *
-     * @param cena New value for the price of this car part.
-     * @return The current value of the price of this car part.
-     */
-    @NonNull
-    private BigDecimal cena;
-
-    /**
      * The object of sale which represented by this car part.
      *
-     * @param predmetProdaje New value for the object of sale. This is an object
-     * of {@link PredmetProdaje} class.
-     * @return The current value of the object of sale.
+     * @param sifraPredmetaProdaje New value for the id of object of sale. 
+     * @return The current value of id of the object of sale.
      */
     @NonNull
-    private PredmetProdaje predmetProdaje;
+    private long sifraPredmetaProdaje;
 
     @Override
     public String getTableName() {
@@ -89,20 +79,19 @@ public class Deo implements Serializable, DomainObject {
 
     @Override
     public String getAttributeNamesForInsert() {
-        return "serijskiBroj, nazivDela, proizvodjac, opis, cena, sifraPredmetaProdaje";
+        return "serijskiBroj, nazivDela, proizvodjac, opis, sifraPredmetaProdaje";
     }
 
     @Override
     public String getAttributeValuesForInsert() {
-        return serijskiBroj + ", '" + nazivDela + "', '" + proizvodjac + "', '" + opis + "',"
-                + cena + ", " + predmetProdaje.getSifraPredmetaProdaje();
+        return serijskiBroj + ", '" + nazivDela + "', '" + proizvodjac + "', '" + opis + "'," + sifraPredmetaProdaje;
     }
 
     @Override
     public String getAttributesForUpdate() {
         return "serijskiBroj = " + serijskiBroj + ", nazivDela = '" + nazivDela
                 + "', proizvodjac = '" + proizvodjac + "', opis = '" + opis
-                + "', cena = " + cena + ", sifraPredmetaProdaje = " + predmetProdaje.getSifraPredmetaProdaje();
+                + "', sifraPredmetaProdaje = " + sifraPredmetaProdaje;
     }
 
     @Override

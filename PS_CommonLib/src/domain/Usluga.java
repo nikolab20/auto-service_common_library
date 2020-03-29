@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 /**
  * @author nikol
  */
-
 /**
  * Represent the service.
  */
@@ -54,15 +53,6 @@ public class Usluga implements Serializable, DomainObject {
     private String opisUsluge;
 
     /**
-     * The price of the service.
-     *
-     * @param cena New value for the price of this service.
-     * @return The current value of the price of this service.
-     */
-    @NonNull
-    private BigDecimal cena;
-
-    /**
      * The object of sale which represented by this service.
      *
      * @param predmetProdaje New value for the object of sale. This is an object
@@ -72,7 +62,6 @@ public class Usluga implements Serializable, DomainObject {
     @NonNull
     private PredmetProdaje predmetProdaje;
 
-
     @Override
     public String getTableName() {
         return "usluga";
@@ -80,19 +69,19 @@ public class Usluga implements Serializable, DomainObject {
 
     @Override
     public String getAttributeNamesForInsert() {
-        return "nazivUsluge, opisUsluge, cena, sifraPredmetaProdaje";
+        return "nazivUsluge, opisUsluge, sifraPredmetaProdaje";
     }
 
     @Override
     public String getAttributeValuesForInsert() {
-        return "'" + nazivUsluge + "', '" + opisUsluge + "', " + cena + ", " +
-                predmetProdaje.getSifraPredmetaProdaje();
+        return "'" + nazivUsluge + "', '" + opisUsluge + "', "
+                + predmetProdaje.getSifraPredmetaProdaje();
     }
 
     @Override
     public String getAttributesForUpdate() {
-        return "nazivUsluge = '" + nazivUsluge + "', opisUsluge '" + opisUsluge + "', cena = " + cena +
-                ", sifraPredmetaProdaje = " + predmetProdaje.getSifraPredmetaProdaje();
+        return "nazivUsluge = '" + nazivUsluge + "', opisUsluge '" + opisUsluge
+                + "', sifraPredmetaProdaje = " + predmetProdaje.getSifraPredmetaProdaje();
     }
 
     @Override
