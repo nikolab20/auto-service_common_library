@@ -34,4 +34,8 @@ public interface FormListener {
     void openUpdateService();
 
     void openDeleteService();
+    
+    void openAddBill();
+     
+    void openInvalidateBill();
 }
