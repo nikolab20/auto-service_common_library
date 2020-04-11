@@ -13,13 +13,11 @@ import java.math.BigDecimal;
 /**
  * @author nikol
  */
-
 /**
  * Represent the tax rate.
  */
 @NoArgsConstructor
-@RequiredArgsConstructor
-@ToString(includeFieldNames = false, onlyExplicitlyIncluded = true)
+@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
 @Setter
@@ -40,8 +38,6 @@ public class PoreskaStopa implements Serializable, DomainObject {
      * @param oznaka New value for the tag of this tax rate.
      * @return The current value of the tag of this tax rate.
      */
-    @NonNull
-    @ToString.Include
     private String oznaka;
 
     /**
@@ -50,8 +46,6 @@ public class PoreskaStopa implements Serializable, DomainObject {
      * @param vrednost New value for the value of this tax rate.
      * @return The current value of the value of this tax rate.
      */
-    @NonNull
-    @ToString.Include
     private BigDecimal vrednost;
 
     @Override
@@ -93,4 +87,10 @@ public class PoreskaStopa implements Serializable, DomainObject {
     public Long getObjectId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return oznaka + " (" + vrednost + ")";
+    }
+
 }

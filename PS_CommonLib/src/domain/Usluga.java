@@ -17,7 +17,7 @@ import java.math.BigDecimal;
  * Represent the service.
  */
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @ToString(includeFieldNames = false, onlyExplicitlyIncluded = true)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
@@ -39,7 +39,6 @@ public class Usluga implements Serializable, DomainObject {
      * @param nazivUsluge New value for the name of this service.
      * @return The current value of the name of this service.
      */
-    @NonNull
     @ToString.Include
     private String nazivUsluge;
 
@@ -49,17 +48,14 @@ public class Usluga implements Serializable, DomainObject {
      * @param opisUsluge New value for the description of this service.
      * @return The current value of the description of this service.
      */
-    @NonNull
     private String opisUsluge;
 
     /**
-     * The object of sale which represented by this service.
+     * The object of sale which represented by this car part.
      *
-     * @param predmetProdaje New value for the object of sale. This is an object
-     * of {@link PredmetProdaje} class.
+     * @param predmetProdaje New value for the object of sale.
      * @return The current value of the object of sale.
      */
-    @NonNull
     private PredmetProdaje predmetProdaje;
 
     @Override
@@ -80,7 +76,7 @@ public class Usluga implements Serializable, DomainObject {
 
     @Override
     public String getAttributesForUpdate() {
-        return "nazivUsluge = '" + nazivUsluge + "', opisUsluge '" + opisUsluge
+        return "nazivUsluge = '" + nazivUsluge + "', opisUsluge = '" + opisUsluge
                 + "', sifraPredmetaProdaje = " + predmetProdaje.getSifraPredmetaProdaje();
     }
 

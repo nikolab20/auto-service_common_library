@@ -18,7 +18,7 @@ import java.math.BigDecimal;
  * Represents the customer of the car service.
  */
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @ToString(includeFieldNames = false, onlyExplicitlyIncluded = true)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
@@ -40,7 +40,6 @@ public class Klijent implements Serializable, DomainObject {
      * @param imeKlijenta New value for this customer's first name.
      * @return The current value of this customer's first name.
      */
-    @NonNull
     @ToString.Include
     private String imeKlijenta;
 
@@ -50,7 +49,6 @@ public class Klijent implements Serializable, DomainObject {
      * @param prezimeKlijenta New value for this customer's last name.
      * @return The current value of this customer's last name.
      */
-    @NonNull
     @ToString.Include
     private String prezimeKlijenta;
 
@@ -60,7 +58,6 @@ public class Klijent implements Serializable, DomainObject {
      * @param brojPoseta New value for this customer's visit count.
      * @return The current value of this customer's visit count.
      */
-    @NonNull
     private int brojPoseta;
 
     /**
@@ -69,7 +66,6 @@ public class Klijent implements Serializable, DomainObject {
      * @param dug New value for this customer's debt.
      * @return The current value of this customer's debt.
      */
-    @NonNull
     private BigDecimal dug;
 
     @Override

@@ -40,7 +40,6 @@ public class Deo implements Serializable, DomainObject {
      * @return The current value of the name of this car part.
      */
     @ToString.Include
-    @NonNull
     private String nazivDela;
 
     /**
@@ -51,7 +50,6 @@ public class Deo implements Serializable, DomainObject {
      * @return The current value of the name of the manufacturer of this car
      * part.
      */
-    @NonNull
     private String proizvodjac;
 
     /**
@@ -60,17 +58,17 @@ public class Deo implements Serializable, DomainObject {
      * @param opis New value for the description of this car part.
      * @return The current value of the description of this car part.
      */
-    @NonNull
     private String opis;
+
+    private int stanje;
 
     /**
      * The object of sale which represented by this car part.
      *
-     * @param sifraPredmetaProdaje New value for the id of object of sale. 
-     * @return The current value of id of the object of sale.
+     * @param predmetProdaje New value for the object of sale.
+     * @return The current value of the object of sale.
      */
-    @NonNull
-    private long sifraPredmetaProdaje;
+    private PredmetProdaje predmetProdaje;
 
     @Override
     public String getTableName() {
@@ -79,19 +77,20 @@ public class Deo implements Serializable, DomainObject {
 
     @Override
     public String getAttributeNamesForInsert() {
-        return "serijskiBroj, nazivDela, proizvodjac, opis, sifraPredmetaProdaje";
+        return "serijskiBroj, nazivDela, proizvodjac, opis, sifraPredmetaProdaje, stanje";
     }
 
     @Override
     public String getAttributeValuesForInsert() {
-        return serijskiBroj + ", '" + nazivDela + "', '" + proizvodjac + "', '" + opis + "'," + sifraPredmetaProdaje;
+        return serijskiBroj + ", '" + nazivDela + "', '" + proizvodjac + "', '" + opis + "'," + predmetProdaje.getSifraPredmetaProdaje() + ", " + stanje;
     }
 
     @Override
     public String getAttributesForUpdate() {
         return "serijskiBroj = " + serijskiBroj + ", nazivDela = '" + nazivDela
                 + "', proizvodjac = '" + proizvodjac + "', opis = '" + opis
-                + "', sifraPredmetaProdaje = " + sifraPredmetaProdaje;
+                + "', sifraPredmetaProdaje = " + predmetProdaje.getSifraPredmetaProdaje()
+                + ", stanje = " + stanje;
     }
 
     @Override

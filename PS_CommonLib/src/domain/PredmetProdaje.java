@@ -17,7 +17,7 @@ import java.math.BigDecimal;
  * Represents the object of the sale.
  */
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
 @Setter
@@ -39,7 +39,6 @@ public class PredmetProdaje implements Serializable, DomainObject {
      * @param cena New value for the price of this object of the sale.
      * @return The current value of the price of this object of the sale.
      */
-    @NonNull
     private BigDecimal cena;
 
     /**
@@ -50,7 +49,6 @@ public class PredmetProdaje implements Serializable, DomainObject {
      * @return The current value of the price with tax of this object of the
      * sale.
      */
-    @NonNull
     private BigDecimal cenaSaPorezom;
 
     /**
@@ -60,7 +58,6 @@ public class PredmetProdaje implements Serializable, DomainObject {
      * sale. This is an object of {@link PoreskaStopa} class.
      * @return The current value of the tax rate of this object of the sale.
      */
-    @NonNull
     private PoreskaStopa poreskaStopa;
 
     @Override

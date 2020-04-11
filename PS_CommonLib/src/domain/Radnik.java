@@ -17,7 +17,7 @@ import java.io.Serializable;
  * Represents a car service worker.
  */
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @ToString(includeFieldNames = false, onlyExplicitlyIncluded = true)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
@@ -39,7 +39,6 @@ public class Radnik implements Serializable, DomainObject {
      * @param imeRadnika New value for this worker's first name.
      * @return The current value of this worker's first name.
      */
-    @NonNull
     @ToString.Include
     private String imeRadnika;
 
@@ -49,7 +48,6 @@ public class Radnik implements Serializable, DomainObject {
      * @param prezimeRadnika New value for this worker's last name.
      * @return The current value of this worker's last name.
      */
-    @NonNull
     @ToString.Include
     private String prezimeRadnika;
 
@@ -59,7 +57,6 @@ public class Radnik implements Serializable, DomainObject {
      * @param adresa New value for this worker's address.
      * @return The current value of this worker's address.
      */
-    @NonNull
     private String adresa;
 
     /**
@@ -68,7 +65,6 @@ public class Radnik implements Serializable, DomainObject {
      * @param telefon New value for this worker's phone number.
      * @return The current value of this worker's phone number.
      */
-    @NonNull
     private String telefon;
 
     /**
@@ -77,7 +73,6 @@ public class Radnik implements Serializable, DomainObject {
      * @param JMBG New value for this worker's personal identity number.
      * @return The current value of this worker's personal identity number.
      */
-    @NonNull
     @EqualsAndHashCode.Include
     private String JMBG;
 
@@ -87,7 +82,6 @@ public class Radnik implements Serializable, DomainObject {
      * @param storniran New value for this worker attribute.
      * @return The current value of this worker attribute.
      */
-    @NonNull
     private boolean administrator;
 
     /**
@@ -96,7 +90,6 @@ public class Radnik implements Serializable, DomainObject {
      * @param username New value for this worker's username.
      * @return The current value of this worker's username.
      */
-    @NonNull
     private String username;
 
     /**
@@ -105,7 +98,6 @@ public class Radnik implements Serializable, DomainObject {
      * @param username New value for this worker's password.
      * @return The current value of this worker's password.
      */
-    @NonNull
     private String password;
 
 
