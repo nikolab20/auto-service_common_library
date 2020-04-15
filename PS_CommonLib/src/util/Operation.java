@@ -30,4 +30,7 @@ public class Operation implements Serializable {
     public static final int OPERATION_GET_ALL_OBJECT_OF_SALES = 13;
     public static final int OPERATION_INSERT_LIST = 14;
     public static final int OPERATION_SEARCH_BILL = 15;
+    public static final int OPERATION_SEARCH_BILL_FROM_DATE = 16;
+    public static final int OPERATION_SEARCH_NEW_CLIENTS_FROM_DATE = 17;
+    public static final int OPERATION_SEARCH_CLIENTS_WITH_DEBT = 18;
 }

@@ -38,4 +38,10 @@ public interface FormListener {
     void openAddBill();
      
     void openInvalidateBill();
+    
+    void openBillsFromDate();
+
+    void openNewClientsFromDate();
+
+    void openClientsDebt();
 }
