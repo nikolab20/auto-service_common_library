@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import lombok.*;
@@ -12,7 +7,6 @@ import java.io.Serializable;
 /*
   @author nikol
  */
-
 /**
  * Represents a car service worker.
  */
@@ -79,7 +73,7 @@ public class Radnik implements Serializable, DomainObject {
     /**
      * Checks whether the worker is an administrator.
      *
-     * @param storniran New value for this worker attribute.
+     * @param administrator New value for this worker attribute.
      * @return The current value of this worker attribute.
      */
     private boolean administrator;
@@ -100,7 +94,6 @@ public class Radnik implements Serializable, DomainObject {
      */
     private String password;
 
-
     @Override
     public String getTableName() {
         return "radnik";
@@ -113,15 +106,15 @@ public class Radnik implements Serializable, DomainObject {
 
     @Override
     public String getAttributeValuesForInsert() {
-        return imeRadnika + "', '" + prezimeRadnika + "', '" + adresa + "', '" + telefon +
-                "', '" + JMBG + "', " + administrator + ", '" + username + "', '" + password + "'";
+        return imeRadnika + "', '" + prezimeRadnika + "', '" + adresa + "', '" + telefon
+                + "', '" + JMBG + "', " + administrator + ", '" + username + "', '" + password + "'";
     }
 
     @Override
     public String getAttributesForUpdate() {
-        return "imeRadnika = '" + imeRadnika + "', prezimeRadnika = '" + prezimeRadnika + "', adresa = '" + adresa +
-                "', telefon = '" + telefon + "', JMBG = '" + JMBG + "', administrator = " + administrator +
-                ", username = '" + username + "', password = '" + password + "'";
+        return "imeRadnika = '" + imeRadnika + "', prezimeRadnika = '" + prezimeRadnika + "', adresa = '" + adresa
+                + "', telefon = '" + telefon + "', JMBG = '" + JMBG + "', administrator = " + administrator
+                + ", username = '" + username + "', password = '" + password + "'";
     }
 
     @Override

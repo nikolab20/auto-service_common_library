@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import lombok.*;
@@ -34,7 +29,7 @@ public class Racun implements Serializable, DomainObject {
     @EqualsAndHashCode.Include
     @ToString.Include
     private Long brojRacuna;
-    
+
     @EqualsAndHashCode.Include
     private Date datumIzdavanja;
 
@@ -89,23 +84,23 @@ public class Racun implements Serializable, DomainObject {
      * invoice.
      */
     private Klijent klijent;
-    
+
     @Override
     public String getTableName() {
         return "racun";
     }
-    
+
     @Override
     public String getAttributeNamesForInsert() {
         return "datumIzdavanja, ukupnaVrednost, ukupnaVrednostSaPorezom, obradjen, storniran, sifraRadnika, sifraKlijenta";
     }
-    
+
     @Override
     public String getAttributeValuesForInsert() {
         return new java.sql.Date(datumIzdavanja.getTime()) + ", " + ukupnaVrednost + ", " + ukupnaVrednostSaPorezom + ", " + obradjen + ", "
                 + storniran + ", " + radnik.getSifraRadnika() + ", " + klijent.getSifraKlijenta();
     }
-    
+
     @Override
     public String getAttributesForUpdate() {
         return "datumIzdavanja = '" + new java.sql.Date(datumIzdavanja.getTime()) + "', ukupnaVrednost = " + ukupnaVrednost
@@ -113,22 +108,22 @@ public class Racun implements Serializable, DomainObject {
                 + ", obradjen = " + obradjen + ", storniran = " + storniran + ", sifraRadnika = "
                 + radnik.getSifraRadnika() + ", sifraKlijenta = " + klijent.getSifraKlijenta();
     }
-    
+
     @Override
     public String getIdentifierName() {
         return "brojRacuna";
     }
-    
+
     @Override
     public boolean isAutoincrement() {
         return true;
     }
-    
+
     @Override
     public void setObjectId(Long id) {
         setBrojRacuna(id);
     }
-    
+
     @Override
     public Long getObjectId() {
         return brojRacuna;

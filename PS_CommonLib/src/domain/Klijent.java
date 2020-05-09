@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import lombok.*;
@@ -13,7 +8,6 @@ import java.math.BigDecimal;
 /**
  * @author nikol
  */
-
 /**
  * Represents the customer of the car service.
  */
@@ -85,8 +79,8 @@ public class Klijent implements Serializable, DomainObject {
 
     @Override
     public String getAttributesForUpdate() {
-        return "imeKlijenta = '" + imeKlijenta + "', prezimeKlijenta = '" + prezimeKlijenta +
-                "', brojPoseta = " + brojPoseta + ", dug = " + dug;
+        return "imeKlijenta = '" + imeKlijenta + "', prezimeKlijenta = '" + prezimeKlijenta
+                + "', brojPoseta = " + brojPoseta + ", dug = " + dug;
     }
 
     @Override

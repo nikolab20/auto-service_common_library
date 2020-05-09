@@ -1,17 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package listeners;
 
 import domain.DomainObject;
 
 /**
+ * Custom listener for listening generating domain object.
  *
  * @author nikol
  */
 public interface GenerateListener {
 
-    public DomainObject generateOdo(DomainObject domainObject) throws Exception;
+    /**
+     * Method for notifying all listeners which listening this listener that
+     * form request to generate domain object.
+     *
+     * @param domainObject is object that form need to generate.
+     * @return generated domain object.
+     */
+    public DomainObject generateOdo(DomainObject domainObject);
 }
